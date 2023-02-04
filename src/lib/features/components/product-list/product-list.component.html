@@ -1,20 +1,21 @@
 <h2>Product list</h2>
 
 <!-- Property binding -->
+<!-- Event binding -->
 <button (click)="handleClick()" [disabled]="isDisabled">Show Products</button>
 
 <ul>
   <li>
-    <img src="{{ image1 }}" alt="{{ name1 }}" width="100px" />
+    <img [src]="image1" [alt]="name1" width="100px" />
     <!-- Interpolation -->
-    <p>{{ name1 }}</p>
+    <p>Name: {{ name1 }}</p>
     <p>{{ description1 }}</p>
-    <p>{{ price1 }}</p>
+    <p>Price: {{ price1 }}</p>
   </li>
   <li>
-    <img src="{{ image2 }}" alt="{{ name2 }}" width="100px" />
-    <p>{{ name2 }}</p>
+    <img [src]="image2" [alt]="name2" width="100px" />
+    <p>Name: {{ name2 }}</p>
     <p>{{ description2 }}</p>
-    <p>{{ price2 }}</p>
+    <p>Price: {{ price2 }}</p>
   </li>
 </ul>
