@@ -28,6 +28,8 @@ export class ProductListComponent {
 
   myColor: string = 'blue';
 
+  attributeLabel: string = 'Set an attribute';
+
   handleClick() {
     alert('Here');
   }
