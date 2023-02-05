@@ -22,7 +22,13 @@ export class ProductListComponent {
 
   isDisabled: boolean = false;
 
+  fontSize: number = 16;
+
   handleClick() {
     alert('Here');
   }
+
+  // handleInput(event: any) {
+  //   console.log(event.target.value);
+  // }
 }

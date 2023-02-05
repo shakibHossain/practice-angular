@@ -3,6 +3,11 @@
 <!-- Property binding -->
 <!-- Event binding -->
 <button (click)="handleClick()" [disabled]="isDisabled">Show Products</button>
+<!-- <input type="text" (input)="handleInput($event)" /> -->
+<!-- Two way data binding -->
+<input type="text" [(ngModel)]="fontSize" />
+
+<div [style.font-size.px]="fontSize">Resizable Text</div>
 
 <ul>
   <li>
