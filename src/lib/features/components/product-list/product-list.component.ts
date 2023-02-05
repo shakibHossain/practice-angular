@@ -24,6 +24,10 @@ export class ProductListComponent {
 
   fontSize: number = 16;
 
+  applyClass: boolean = true;
+
+  myColor: string = 'blue';
+
   handleClick() {
     alert('Here');
   }
