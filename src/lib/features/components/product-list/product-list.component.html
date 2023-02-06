@@ -3,7 +3,7 @@
 <!-- Property binding -->
 <!-- Event binding -->
 <button (click)="handleClick()" [disabled]="isDisabled">Click Event</button>
-<br />
+<br /><br />
 <!-- <input type="text" (input)="handleInput($event)" /> -->
 
 <!-- Two way data binding -->
@@ -21,15 +21,21 @@
   <ng-container *ngIf="!isShowing">Show Products</ng-container>
   <ng-container *ngIf="isShowing">Hide Products</ng-container>
 </button>
+<br /><br />
+<!-- Custom Pipe -->
+<input [(ngModel)]="searchTerm" placeholder="Filter" />
 
 <ul *ngIf="isShowing">
-  <ng-container *ngFor="let product of productList">
+  <ng-container
+    *ngFor="let product of productList | filter : searchTerm : 'name'"
+  >
     <li>
       <img [src]="product.image" [alt]="product.name" width="100px" />
       <!-- Interpolation -->
       <p>Name: {{ product.name }}</p>
       <p>{{ product.description }}</p>
-      <p>Price: {{ product.price }}</p>
+      <!-- Currency Pipe -->
+      <p>Price: {{ product.price | currency : "CAD" }}</p>
     </li>
   </ng-container>
 </ul>

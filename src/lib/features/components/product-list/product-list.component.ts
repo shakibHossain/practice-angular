@@ -41,6 +41,8 @@ export class ProductListComponent {
 
   isShowing: boolean = true;
 
+  searchTerm: string = '';
+
   handleClick() {
     alert('Here');
   }
