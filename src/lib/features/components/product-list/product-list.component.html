@@ -2,7 +2,8 @@
 
 <!-- Property binding -->
 <!-- Event binding -->
-<button (click)="handleClick()" [disabled]="isDisabled">Show Products</button>
+<button (click)="handleClick()" [disabled]="isDisabled">Click Event</button>
+<br />
 <!-- <input type="text" (input)="handleInput($event)" /> -->
 
 <!-- Two way data binding -->
@@ -14,19 +15,21 @@
 <div [style.color]="myColor">Style binding</div>
 <!-- Attribute binding -->
 <div [attr.aria-label]="attributeLabel">{{ attributeLabel }}</div>
+<br />
 
-<ul>
-  <li>
-    <img [src]="image1" [alt]="name1" width="100px" />
-    <!-- Interpolation -->
-    <p>Name: {{ name1 }}</p>
-    <p>{{ description1 }}</p>
-    <p>Price: {{ price1 }}</p>
-  </li>
-  <li>
-    <img [src]="image2" [alt]="name2" width="100px" />
-    <p>Name: {{ name2 }}</p>
-    <p>{{ description2 }}</p>
-    <p>Price: {{ price2 }}</p>
-  </li>
+<button (click)="isShowing = !isShowing">
+  <ng-container *ngIf="!isShowing">Show Products</ng-container>
+  <ng-container *ngIf="isShowing">Hide Products</ng-container>
+</button>
+
+<ul *ngIf="isShowing">
+  <ng-container *ngFor="let product of productList">
+    <li>
+      <img [src]="product.image" [alt]="product.name" width="100px" />
+      <!-- Interpolation -->
+      <p>Name: {{ product.name }}</p>
+      <p>{{ product.description }}</p>
+      <p>Price: {{ product.price }}</p>
+    </li>
+  </ng-container>
 </ul>

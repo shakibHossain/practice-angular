@@ -1,24 +1,33 @@
 import { Component } from '@angular/core';
 
+interface Product {
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+}
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.sass'],
 })
 export class ProductListComponent {
-  name1: string = 'Apple iPhone 12';
-  description1: string =
-    'This product will have a battery that exceeds 80% capacity relative to new';
-  image1: string =
-    'https://m.media-amazon.com/images/I/513NI5xpYjL.__AC_SX300_SY300_QL70_ML2_.jpg';
-  price1: number = 598;
-
-  name2: string = 'Apple iPhone 11';
-  description2: string =
-    'This product comes with a 90-day supplier-backed warranty';
-  image2: string =
-    'https://m.media-amazon.com/images/I/51cPOOgzp0L._AC_SX425_.jpg';
-  price2: number = 512;
+  productList: Product[] = [
+    {
+      name: 'Apple iPhone 12',
+      description:
+        'This product will have a battery that exceeds 80% capacity relative to new',
+      image:
+        'https://m.media-amazon.com/images/I/513NI5xpYjL.__AC_SX300_SY300_QL70_ML2_.jpg',
+      price: 598,
+    },
+    {
+      name: 'Apple iPhone 11',
+      description: 'This product comes with a 90-day supplier-backed warranty',
+      image: 'https://m.media-amazon.com/images/I/51cPOOgzp0L._AC_SX425_.jpg',
+      price: 512,
+    },
+  ];
 
   isDisabled: boolean = false;
 
@@ -30,9 +39,15 @@ export class ProductListComponent {
 
   attributeLabel: string = 'Set an attribute';
 
+  isShowing: boolean = true;
+
   handleClick() {
     alert('Here');
   }
+
+  // handleToggle() {
+  //   this.isShowing = !this.isShowing;
+  // }
 
   // handleInput(event: any) {
   //   console.log(event.target.value);
