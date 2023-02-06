@@ -1,0 +1,10 @@
+<li>
+  <img [src]="product.image" [alt]="product.name" width="100px" />
+  <!-- Interpolation -->
+  <p>Name: {{ product.name }}</p>
+  <p>{{ product.description }}</p>
+  <!-- Currency Pipe -->
+  <p>Price: {{ product.price | currency : "CAD" }}</p>
+  <!-- Sending data from child to parent -->
+  <button (click)="addToCart()">Add to Cart</button>
+</li>

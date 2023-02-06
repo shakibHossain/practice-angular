@@ -6,9 +6,15 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from '../lib/features/components/product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from 'src/lib/shared/pipes/filter.pipe';
+import { ProductDetailsComponent } from '../lib/features/components/product-details/product-details.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent, FilterPipe],
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    FilterPipe,
+    ProductDetailsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

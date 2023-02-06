@@ -27,15 +27,9 @@
 
 <ul *ngIf="isShowing">
   <ng-container
-    *ngFor="let product of productList | filter : searchTerm : 'name'"
+    *ngFor="let singleProduct of productList | filter : searchTerm : 'name'"
   >
-    <li>
-      <img [src]="product.image" [alt]="product.name" width="100px" />
-      <!-- Interpolation -->
-      <p>Name: {{ product.name }}</p>
-      <p>{{ product.description }}</p>
-      <!-- Currency Pipe -->
-      <p>Price: {{ product.price | currency : "CAD" }}</p>
-    </li>
+    <!-- Sending data from parent to child -->
+    <app-product-details (newProductEvent)="addToCart($event)" [product]="singleProduct"></app-product-details>
   </ng-container>
 </ul>

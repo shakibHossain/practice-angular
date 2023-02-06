@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from 'src/lib/shared/types/Product';
 
-interface Product {
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-}
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -20,6 +15,13 @@ export class ProductListComponent {
       image:
         'https://m.media-amazon.com/images/I/513NI5xpYjL.__AC_SX300_SY300_QL70_ML2_.jpg',
       price: 598,
+    },
+    {
+      name: 'Apple iPhone 12 Pro',
+      description:
+        'This product is in "Excellent condition". No signs of cosmetic damage when held 30 centimetres away',
+      image: 'https://m.media-amazon.com/images/I/51n-83C8HYL._AC_SX425_.jpg',
+      price: 799.99,
     },
     {
       name: 'Apple iPhone 11',
@@ -54,4 +56,9 @@ export class ProductListComponent {
   // handleInput(event: any) {
   //   console.log(event.target.value);
   // }
+
+  // Receiving data from child
+  addToCart(product: Product) {
+    console.log(product);
+  }
 }
