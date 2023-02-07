@@ -3,20 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from '../lib/features/components/products/components/product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
-import { FilterPipe } from 'src/lib/shared/pipes/filter.pipe';
-import { ProductDetailsComponent } from '../lib/features/components/products/components/product-details/product-details.component';
+import { ProductsModule } from 'src/lib/features/components/products/products.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductListComponent,
-    FilterPipe,
-    ProductDetailsComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ProductsModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
