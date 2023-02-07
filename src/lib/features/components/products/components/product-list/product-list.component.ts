@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Product } from 'src/lib/features/components/products/types/Product';
 
 @Component({
@@ -6,7 +6,7 @@ import { Product } from 'src/lib/features/components/products/types/Product';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.sass'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   productList: Product[] = [
     {
       name: 'Apple iPhone 12',
@@ -44,6 +44,16 @@ export class ProductListComponent {
   isShowing: boolean = true;
 
   searchTerm: string = '';
+
+  testOnChangeValue: string = '';
+
+  constructor() {
+    console.log({ constructor: 'constructor' });
+  }
+
+  ngOnInit(): void {
+    console.log({ onInIt: 'OnInit' });
+  }
 
   handleClick() {
     alert('Here');

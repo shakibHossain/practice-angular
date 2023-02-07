@@ -24,12 +24,20 @@
 <br /><br />
 <!-- Custom Pipe -->
 <input [(ngModel)]="searchTerm" placeholder="Filter" />
+<br /><br />
+
+<!-- OnChanges -->
+<input type="text" [(ngModel)]="testOnChangeValue" placeholder="onChanges" />
 
 <ul *ngIf="isShowing">
   <ng-container
     *ngFor="let singleProduct of productList | filter : searchTerm : 'name'"
   >
     <!-- Sending data from parent to child -->
-    <app-product-details (newProductEvent)="addToCart($event)" [product]="singleProduct"></app-product-details>
+    <app-product-details
+      (newProductEvent)="addToCart($event)"
+      [product]="singleProduct"
+      [testOnChangeValue]="testOnChangeValue"
+    ></app-product-details>
   </ng-container>
 </ul>
