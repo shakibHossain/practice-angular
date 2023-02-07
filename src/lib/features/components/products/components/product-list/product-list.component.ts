@@ -48,7 +48,7 @@ export class ProductListComponent implements OnInit {
   // }
 
   // Receiving data from child
-  addToCart(product: Product) {
-    console.log(product);
-  }
+  // addToCart(product: Product) {
+  //   console.log(product);
+  // }
 }

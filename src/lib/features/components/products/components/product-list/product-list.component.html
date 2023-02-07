@@ -34,8 +34,12 @@
     *ngFor="let singleProduct of productList | filter : searchTerm : 'name'"
   >
     <!-- Sending data from parent to child -->
-    <app-product-details
+    <!-- <app-product-details
       (newProductEvent)="addToCart($event)"
+      [product]="singleProduct"
+      [testOnChangeValue]="testOnChangeValue"
+    ></app-product-details> -->
+    <app-product-details
       [product]="singleProduct"
       [testOnChangeValue]="testOnChangeValue"
     ></app-product-details>

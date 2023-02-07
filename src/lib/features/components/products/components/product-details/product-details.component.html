@@ -6,6 +6,7 @@
   <!-- Currency Pipe -->
   <p>Price: {{ product.price | currency : "CAD" }}</p>
   <!-- Sending data from child to parent -->
-  <button (click)="addToCart()">Add to Cart</button>
+  <button *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+  <button *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
   <p>{{ testOnChangeValue }}</p>
 </li>

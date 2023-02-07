@@ -9,6 +9,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Product } from 'src/lib/features/components/products/types/Product';
+import { CartService } from 'src/lib/features/services/cart/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -24,6 +25,10 @@ export class ProductDetailsComponent implements OnInit, OnDestroy, OnChanges {
   @Input() testOnChangeValue: string = '';
 
   myInterval: any = null;
+
+  isInCart: boolean = false;
+
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     // this.myInterval = setInterval(() => {
@@ -44,6 +49,13 @@ export class ProductDetailsComponent implements OnInit, OnDestroy, OnChanges {
 
   addToCart() {
     // console.log(this.product);
+    this.isInCart = true;
     this.newProductEvent.emit(this.product);
+    this.cartService.addProduct(this.product);
+  }
+
+  removeFromCart() {
+    this.isInCart = false;
+    this.cartService.removeProduct(this.product);
   }
 }
